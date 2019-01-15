@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Media } from "reactstrap";
 
 class Catalog extends Component {
+  catalog;
 
   constructor(props, context) {
     super(props, context);
@@ -9,6 +10,7 @@ class Catalog extends Component {
     this.state = {
       items: [
         {
+          id: 1,
           name: "Helmet",
           image: "/assets/images/helmet.jpg",
           category: "safety",
@@ -18,6 +20,7 @@ class Catalog extends Component {
             "Un casco de seguridad útil para proteger en ámbitos como la construcción, fabricas y otros"
         },
         {
+          id: 2,
           name: "Audio protector",
           image: "/assets/images/audio.jpg",
           category: "safety",
@@ -27,6 +30,7 @@ class Catalog extends Component {
             "Protege de ruidos auditivos por encima de los decibeles considerados aceptables"
         },
         {
+          id: 3,
           name: "Glasses",
           image: "/assets/images/glasses.jpg",
           category: "safety",
@@ -36,6 +40,7 @@ class Catalog extends Component {
             "Permite filtrar rayos ultravioleta, material anti rayas, anti caidas"
         },
         {
+          id: 4,
           name: "Gloves",
           image: "/assets/images/gloves.jpg",
           category: "safety",
@@ -46,23 +51,29 @@ class Catalog extends Component {
         }
       ]
     };
-
+    this.catalog = this.state.items.map(item => {
+      const imgStyle = { maxHeight: 128, maxWidth: 128 };
+      return (
+        <div key={item.id} className="col-12 mt-5">
+          <Media tag="li">
+            <Media left middle>
+              <Media object src={item.image} alt={item.name} style={imgStyle}/>
+            </Media>
+            <Media body className="ml-5">
+              <Media heading>{item.name}</Media>
+              <p>{item.description}</p>
+            </Media>
+          </Media>
+        </div>
+      );
+    });
   }
 
   render() {
-      let catalog = this.state.items.map(item => {
-          return (
-              <div className="container" key={item.id}>
-                  <div className="row">
-                      <Media list>{ catalog }</Media>
-                  </div>
-              </div>
-          );
-      });
     return (
       <div className="container">
         <div className="row">
-          <Media list>{catalog}</Media>
+          <Media list>{this.catalog}</Media>
         </div>
       </div>
     );
