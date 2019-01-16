@@ -5,8 +5,17 @@ import { Navbar, NavbarBrand } from 'reactstrap';
 import Catalog from "./components/Catalog";
 
 import './App.css';
+import {ITEMS} from "./shared/items";
 
 class App extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            items: ITEMS
+        }
+    }
+
   render() {
     return (
       <div className="App">
@@ -15,7 +24,7 @@ class App extends Component {
             <NavbarBrand href="/">Sistema de Seguridad Industrial</NavbarBrand>
           </div>
         </Navbar>
-        <Catalog/>
+        <Catalog items={this.state.items}/>
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Media } from "reactstrap";
-import {ITEMS} from "../shared/items";
+import {Card, CardImg, CardImgOverlay, CardTitle, Media} from "reactstrap";
 
 import uuidv4 from 'uuid/v4';
 
@@ -10,22 +9,17 @@ class Catalog extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.state = {
-      items: ITEMS
-    };
-    this.catalog = this.state.items.map(item => {
-      const imgStyle = { maxHeight: 128, maxWidth: 128 };
+    this.catalog = this.props.items.map(item => {
       return (
-        <div key={uuidv4()} className="col-12 mt-5">
-          <Media tag="li">
-            <Media left middle>
-              <Media object src={item.image} alt={item.name} style={imgStyle}/>
-            </Media>
-            <Media body className="ml-5">
-              <Media heading>{item.name}</Media>
-              <p>{item.description}</p>
-            </Media>
-          </Media>
+        <div key={uuidv4()} className="col-12 col-md-5 m-1">
+          <Card>
+              <CardImg width="100%" object="true" src={item.image} alt={item.name}/>
+              <CardImgOverlay>
+                <CardTitle>
+                    {item.name}
+                </CardTitle>
+              </CardImgOverlay>
+          </Card>
         </div>
       );
     });
@@ -35,7 +29,7 @@ class Catalog extends Component {
     return (
       <div className="container">
         <div className="row">
-          <Media list>{this.catalog}</Media>
+          {this.catalog}
         </div>
       </div>
     );
