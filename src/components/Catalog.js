@@ -17,6 +17,8 @@ class Catalog extends Component {
   constructor(props, context) {
     super(props, context);
 
+    console.log("Catalog constructor es invocado");
+
     this.state = {
       selectedItem: null
     };
@@ -42,6 +44,10 @@ class Catalog extends Component {
         </div>
       );
     });
+  }
+
+  componentDidMount() {
+
   }
 
   onItemSelected(item) {
