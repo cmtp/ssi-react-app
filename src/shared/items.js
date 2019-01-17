@@ -1,7 +1,7 @@
 export const ITEMS = [
   {
     name: "Helmet",
-    image: "/assets/images/helmet.jpg",
+    image: "assets/images/helmet.jpg",
     category: "safety",
     label: "ultra safe",
     price: "4.99",
@@ -43,7 +43,7 @@ export const ITEMS = [
   },
   {
     name: "Audio protector",
-    image: "/assets/images/audio.jpg",
+    image: "assets/images/audio.jpg",
     category: "safety",
     label: "noise filter",
     price: "12.99",
@@ -85,7 +85,7 @@ export const ITEMS = [
   },
   {
     name: "Glasses",
-    image: "/assets/images/glasses.jpg",
+    image: "assets/images/glasses.jpg",
     category: "safety",
     label: "New technology",
     price: "31.99",
@@ -127,7 +127,7 @@ export const ITEMS = [
   },
   {
     name: "Gloves",
-    image: "/assets/images/gloves.jpg",
+    image: "assets/images/gloves.jpg",
     category: "safety",
     label: "",
     price: "12.99",

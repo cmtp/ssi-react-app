@@ -1,6 +1,5 @@
 {
   "name": "ssi-react-app",
-  "homepage": "http://cmtp.github.io/ssi-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish": "push-dir --dir=build --branch=gh-pages --cleanup"
+    "publish": "push-dir --dir=build --branch=gh-pages --cleanup",
+    "dev:server": "lite-server --baseDir=build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,6 +29,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "lite-server": "^2.4.0",
     "push-dir": "^0.4.1"
   }
 }
