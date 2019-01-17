@@ -1,5 +1,6 @@
 {
   "name": "ssi-react-app",
+  "homepage": "https://cmtp.github.io/ssi-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
