@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Card,
   CardBody,
@@ -6,21 +6,20 @@ import {
   CardImgOverlay,
   CardText,
   CardTitle,
-  Media
-} from "reactstrap";
+} from 'reactstrap';
 
-import uuidv4 from "uuid/v4";
+import uuidv4 from 'uuid/v4';
 
 class Catalog extends Component {
   catalog;
 
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
-    console.log("Catalog constructor es invocado");
+    console.log('Catalog constructor es invocado');
 
     this.state = {
-      selectedItem: null
+      selectedItem: null,
     };
 
     this.catalog = this.props.items.map(item => {
@@ -46,13 +45,11 @@ class Catalog extends Component {
     });
   }
 
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   onItemSelected(item) {
     this.setState({
-      selectedItem: item
+      selectedItem: item,
     });
   }
 
@@ -61,16 +58,12 @@ class Catalog extends Component {
       return (
         <div className="col-12 col-md-5 m-1">
           <Card>
-          <CardImg
-            width="100%"
-            src={item.image}
-            alt={item.name}
-          />
-          <CardBody>
-            <CardTitle>{item.name}</CardTitle>
-            <CardText>{item.description}</CardText>
-          </CardBody>
-        </Card>  
+            <CardImg width="100%" src={item.image} alt={item.name} />
+            <CardBody>
+              <CardTitle>{item.name}</CardTitle>
+              <CardText>{item.description}</CardText>
+            </CardBody>
+          </Card>
         </div>
       );
     } else {
