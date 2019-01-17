@@ -59,10 +59,10 @@ class Catalog extends Component {
   renderItem(item) {
     if (item != null) {
       return (
-        <Card>
+        <div className="col-12 col-md-5 m-1">
+          <Card>
           <CardImg
             width="100%"
-            className="col-5"
             src={item.image}
             alt={item.name}
           />
@@ -70,7 +70,8 @@ class Catalog extends Component {
             <CardTitle>{item.name}</CardTitle>
             <CardText>{item.description}</CardText>
           </CardBody>
-        </Card>
+        </Card>  
+        </div>
       );
     } else {
       return <div />;
