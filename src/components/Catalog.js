@@ -8,6 +8,8 @@ import {
   CardTitle,
 } from 'reactstrap';
 
+import ItemDetail from './ItemDetail';
+
 import uuidv4 from 'uuid/v4';
 
 class Catalog extends Component {
@@ -15,8 +17,6 @@ class Catalog extends Component {
 
   constructor(props) {
     super(props);
-
-    console.log('Catalog constructor es invocado');
 
     this.state = {
       selectedItem: null,
@@ -45,8 +45,6 @@ class Catalog extends Component {
     });
   }
 
-  componentDidMount() {}
-
   onItemSelected(item) {
     this.setState({
       selectedItem: item,
@@ -54,7 +52,7 @@ class Catalog extends Component {
   }
 
   renderItem(item) {
-    if (item != null) {
+    if (item !== null) {
       return (
         <div className="col-12 col-md-5 m-1">
           <Card>
@@ -75,7 +73,7 @@ class Catalog extends Component {
     return (
       <div className="container">
         <div className="row">{this.catalog}</div>
-        <div className="row">{this.renderItem(this.state.selectedItem)}</div>
+        <ItemDetail selected={this.state.selectedItem} />
       </div>
     );
   }

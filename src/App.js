@@ -2,19 +2,18 @@ import React, { Component } from 'react';
 
 import { Navbar, NavbarBrand } from 'reactstrap';
 
-import Catalog from "./components/Catalog";
+import Catalog from './components/Catalog';
 
 import './App.css';
-import {ITEMS} from "./shared/items";
+import { ITEMS } from './shared/items';
 
 class App extends Component {
-
-    constructor() {
-        super();
-        this.state = {
-            items: ITEMS
-        }
-    }
+  constructor() {
+    super();
+    this.state = {
+      items: ITEMS,
+    };
+  }
 
   render() {
     return (
@@ -24,7 +23,7 @@ class App extends Component {
             <NavbarBrand href="/">Sistema de Seguridad Industrial</NavbarBrand>
           </div>
         </Navbar>
-        <Catalog items={this.state.items}/>
+        <Catalog items={this.state.items} />
       </div>
     );
   }
