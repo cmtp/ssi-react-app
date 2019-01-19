@@ -27,7 +27,7 @@ class ItemDetail extends Component {
         return (
         <li key={uuidv4()}>
         <h5>{item.comment}</h5>
-        {item.author} - {item.date}
+        -- {item.author} - {item.date}
         </li>
         );
       });
