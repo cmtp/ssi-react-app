@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
+import {
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+  CardText
+} from 'reactstrap';
 
 import uuidv4 from 'uuid/v4';
 
@@ -61,4 +67,7 @@ class ItemDetail extends Component {
   }
 }
 
+ItemDetail.propTypes = {
+  selected: Object
+};
 export default ItemDetail;
