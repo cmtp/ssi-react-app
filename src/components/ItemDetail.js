@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
 
+import uuidv4 from 'uuid/v4';
+
 class ItemDetail extends Component {
+  comments;
   constructor(props) {
     super(props);
 
@@ -18,9 +21,33 @@ class ItemDetail extends Component {
     }
   }
 
-  renderComments(selectedItem) {
-    if( selectedItem !== null ) {
-        return <div></div>;
+  renderComments(comments) {
+    if (comments.length > 0) {
+      this.comments = comments.map(item => {
+        return (
+        <li key={uuidv4()}>
+        <h5>{item.comment}</h5>
+        {item.author} - {item.date}
+        </li>
+        );
+      });
+    }
+    else {
+      return <li />;
+    }
+    return this.comments;
+  }
+
+  renderCommentSection(selectedItem) {
+    if (selectedItem !== null) {
+      return (
+        <div>
+          <h4>Comentarios</h4>
+          <ul className="list-unstyled">{this.renderComments(selectedItem.comments)}</ul>
+        </div>
+      );
+    } else {
+      return <div />;
     }
   }
 
@@ -41,9 +68,9 @@ class ItemDetail extends Component {
               </CardBody>
             </Card>
           </div>
-            <div className="col-12 col-md-5 m-1">
-                {this.renderComments(this.state.selectedItem)}
-            </div>
+          <div className="col-12 col-md-5 m-1">
+            {this.renderCommentSection(this.state.selectedItem)}
+          </div>
         </div>
       );
     } else {

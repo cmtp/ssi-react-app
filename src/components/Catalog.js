@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import {
   Card,
-  CardBody,
   CardImg,
   CardImgOverlay,
-  CardText,
   CardTitle,
 } from 'reactstrap';
 
@@ -49,24 +47,6 @@ class Catalog extends Component {
     this.setState({
       selectedItem: item,
     });
-  }
-
-  renderItem(item) {
-    if (item !== null) {
-      return (
-        <div className="col-12 col-md-5 m-1">
-          <Card>
-            <CardImg width="100%" src={item.image} alt={item.name} />
-            <CardBody>
-              <CardTitle>{item.name}</CardTitle>
-              <CardText>{item.description}</CardText>
-            </CardBody>
-          </Card>
-        </div>
-      );
-    } else {
-      return <div />;
-    }
   }
 
   render() {
