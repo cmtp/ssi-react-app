@@ -5,34 +5,16 @@ import uuidv4 from 'uuid/v4';
 
 class ItemDetail extends Component {
   comments;
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selectedItem: null,
-    };
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.selected !== prevProps.selected) {
-      this.setState({
-        selectedItem: this.props.selected,
-      });
-    }
-  }
 
   renderComments(comments) {
     if (comments.length > 0) {
-      this.comments = comments.map(item => {
-        return (
+      this.comments = comments.map(item => (
         <li key={uuidv4()}>
-        <h5>{item.comment}</h5>
-        -- {item.author} - {item.date}
+          <h5>{item.comment}</h5>
+          -- {item.author} - {item.date}
         </li>
-        );
-      });
-    }
-    else {
+      ));
+    } else {
       return <li />;
     }
     return this.comments;
@@ -43,39 +25,39 @@ class ItemDetail extends Component {
       return (
         <div>
           <h4>Comentarios</h4>
-          <ul className="list-unstyled">{this.renderComments(selectedItem.comments)}</ul>
+          <ul className="list-unstyled">
+            {this.renderComments(selectedItem.comments)}
+          </ul>
         </div>
       );
-    } else {
-      return <div />;
     }
+    return <div />;
   }
 
   render() {
-    if (this.state.selectedItem) {
+    if (this.props.selected) {
       return (
         <div className="row">
           <div className="col-12 col-md-5 m-1">
             <Card>
               <CardImg
                 width="100%"
-                src={this.state.selectedItem.image}
-                alt={this.state.selectedItem.name}
+                src={this.props.selected.image}
+                alt={this.props.selected.name}
               />
               <CardBody>
-                <CardTitle>{this.state.selectedItem.name}</CardTitle>
-                <CardText>{this.state.selectedItem.description}</CardText>
+                <CardTitle>{this.props.selected.name}</CardTitle>
+                <CardText>{this.props.selected.description}</CardText>
               </CardBody>
             </Card>
           </div>
           <div className="col-12 col-md-5 m-1">
-            {this.renderCommentSection(this.state.selectedItem)}
+            {this.renderCommentSection(this.props.selected)}
           </div>
         </div>
       );
-    } else {
-      return <div />;
     }
+    return <div />;
   }
 }
 

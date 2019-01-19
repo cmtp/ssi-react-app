@@ -30,6 +30,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
     "lite-server": "^2.4.0",
     "push-dir": "^0.4.1"
   }
