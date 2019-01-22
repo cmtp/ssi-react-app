@@ -1,0 +1,50 @@
+import React from 'react';
+
+const Contact = () => (
+  <div className="container">
+    <div className="row row-content">
+      <div className="col-12">
+        <h3>Location Information</h3>
+      </div>
+      <div className="col-12 col-sm-4 offset-sm-1">
+        <h5>Our Address</h5>
+        <address>
+          121, Dr. Drive
+          <br />
+          San Jose, California
+          <br />
+          MOUNTAIN VIEW
+          <br />
+          <i className="fa fa-phone" />: +1 1234 5678
+          <br />
+          <i className="fa fa-fax" />: +1 8765 4321
+          <br />
+          <i className="fa fa-envelope" />:{' '}
+          <a href="mailto:ssi@food.net">ssi@food.net</a>
+        </address>
+      </div>
+      <div className="col-12 col-sm-6 offset-sm-1">
+        <h5>Map of our Location</h5>
+      </div>
+      <div className="col-12 col-sm-11 offset-sm-1">
+        <div className="btn-group" role="group">
+          <a role="button" className="btn btn-primary" href="tel:+112345678">
+            <i className="fa fa-phone" /> Call
+          </a>
+          <a role="button" className="btn btn-info">
+            <i className="fa fa-skype" /> Skype
+          </a>
+          <a
+            role="button"
+            className="btn btn-success"
+            href="mailto:ssi@security.net"
+          >
+            <i className="fa fa-envelope-o" /> Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+export default Contact;
