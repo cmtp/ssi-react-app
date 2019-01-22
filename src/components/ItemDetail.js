@@ -1,5 +1,15 @@
 import React from 'react';
-import { Card, CardBody, CardImg, CardText, CardTitle } from 'reactstrap';
+import {
+  Card,
+  CardBody,
+  CardImg,
+  CardText,
+  CardTitle,
+  Breadcrumb,
+  BreadcrumbItem,
+} from 'reactstrap';
+
+import { Link } from 'react-router-dom';
 
 function RenderItem({ item }) {
   if (item != null) {
@@ -12,9 +22,8 @@ function RenderItem({ item }) {
         </CardBody>
       </Card>
     );
-  } else {
-    return <div />;
   }
+  return <div />;
 }
 
 function RenderComments({ comments }) {
@@ -43,20 +52,33 @@ function RenderComments({ comments }) {
         <ul className="list-unstyled">{commentsItems}</ul>
       </div>
     );
-  } else {
-    return <div />;
   }
+  return <div />;
 }
 
 const ItemDetail = props => {
   console.log('ItemDetail render es invocado');
   return (
-    <div className="row">
-      <div className="col-12 col-md-5 m-1">
-        <RenderItem item={props.item} />
+    <div className="container">
+      <div className="row">
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <Link to="/catalog">Catalog</Link>
+          </BreadcrumbItem>
+          <BreadcrumbItem active>{props.item.name}</BreadcrumbItem>
+        </Breadcrumb>
+        <div className="col-12">
+          <h3>{props.item.name}</h3>
+          <hr />
+        </div>
       </div>
-      <div className="col-12 col-md-5 m-1">
-        <RenderComments comments={props.item ? props.item.comments : null} />
+      <div className="row">
+        <div className="col-12 col-md-5 m-1">
+          <RenderItem item={props.item} />
+        </div>
+        <div className="col-12 col-md-5 m-1">
+          <RenderComments item={props.comments} />
+        </div>
       </div>
     </div>
   );

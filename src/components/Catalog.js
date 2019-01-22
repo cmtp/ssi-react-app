@@ -1,17 +1,23 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import {
+  Card,
+  CardImg,
+  CardImgOverlay,
+  CardTitle,
+  Breadcrumb,
+  BreadcrumbItem,
+} from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-function RenderCatalogItem({ item, onClick }) {
+function RenderCatalogItem({ item }) {
   return (
-    <Card
-      onClick={() => {
-        onClick(item.id);
-      }}
-    >
-      <CardImg width="100%" src={item.image} alt={item.name} />
-      <CardImgOverlay>
-        <CardTitle>{item.name}</CardTitle>
-      </CardImgOverlay>
+    <Card>
+      <Link to={`/catalog/${item.id}`}>
+        <CardImg width="100%" src={item.image} alt={item.name} />
+        <CardImgOverlay>
+          <CardTitle>{item.name}</CardTitle>
+        </CardImgOverlay>
+      </Link>
     </Card>
   );
 }
@@ -26,6 +32,18 @@ const Catalog = props => {
   });
   return (
     <div className="container">
+      <div className="row">
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <Link to="/home">Home</Link>
+          </BreadcrumbItem>
+          <BreadcrumbItem active>Catalog</BreadcrumbItem>
+        </Breadcrumb>
+        <div className="col-12">
+          <h3>Catalog</h3>
+          <hr />
+        </div>
+      </div>
       <div className="row">{catalog}</div>
     </div>
   );

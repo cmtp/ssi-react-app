@@ -43,6 +43,21 @@ class Main extends Component {
       );
     };
 
+    const ItemWithId = ({ match }) => {
+      return (
+        <ItemDetail
+          item={
+            this.state.items.filter(
+              item => item.id === parseInt(match.params.itemId, 10)
+            )[0]
+          }
+          comments={this.state.comments.filter(
+            comment => comment.itemId === parseInt(match.params.itemId, 10)
+          )}
+        />
+      );
+    };
+
     return (
       <div>
         <Header />
@@ -53,6 +68,7 @@ class Main extends Component {
             path="/catalog"
             component={() => <Catalog items={this.state.items} />}
           />
+          <Route path="/catalog/:itemId" component={ItemWithId} />
           <Route exact path="/contactus" component={Contact} />} />
           <Redirect to="/home" />
         </Switch>
