@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
-import { Navbar, NavbarBrand } from 'reactstrap';
-
-import Catalog from './Catalog';
-
+import { Switch, Redirect, Route } from 'react-router-dom';
 import ITEMS from '../shared/items';
+import Catalog from './Catalog';
 import ItemDetail from './ItemDetail';
+import Header from './Header';
+import Footer from './Footer';
+import Home from './Home';
 
 class Main extends Component {
   constructor(props, context) {
@@ -14,35 +14,50 @@ class Main extends Component {
       items: ITEMS,
       selectedItem: null,
     };
+    console.log('Main constructor es invocado');
   }
 
-  onItemSelected(item) {
+  componentDidMount() {
+    console.log('Main componentDidMount es invocado');
+  }
+
+  onItemSelect(itemId) {
     this.setState({
-      selectedItem: item,
+      selectedItem: itemId,
     });
   }
 
   render() {
+    const HomePage = () => {
+      return <Home />;
+    };
+
     return (
-      <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">Sistema de Seguridad Industrial</NavbarBrand>
-          </div>
-        </Navbar>
-        <div className="container">
-          <Catalog
-            items={this.state.items}
-            onClick={itemId => this.onItemSelected(itemId)}
+      <div>
+        <Header />
+        <Switch>
+          <Route path="/home" component={HomePage} />
+          <Route
+            exact
+            path="/catalog"
+            component={() => <Catalog items={this.state.items} />}
           />
-          <ItemDetail
-            selected={
-              this.state.items.filter(
-                item => item.id === this.state.selectedItem
-              )[0]
-            }
-          />
-        </div>
+          <Redirect to="/home" />
+        </Switch>
+        {/* <Catalog
+          items={this.state.items}
+          onClick={itemId => {
+            this.onItemSelect(itemId);
+          }}
+        />
+        <ItemDetail
+          item={
+            this.state.items.filter(
+              item => item.id === this.state.selectedItem
+            )[0]
+          }
+        /> */}
+        <Footer />
       </div>
     );
   }
