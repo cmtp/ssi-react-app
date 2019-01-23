@@ -9,6 +9,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
 import Contact from './Contact';
+import About from './About';
 
 class Main extends Component {
   constructor(props, context) {
@@ -58,6 +59,10 @@ class Main extends Component {
       );
     };
 
+    const AboutPage = () => {
+      return <About employees={this.state.employees} />;
+    };
+
     return (
       <div>
         <Header />
@@ -70,21 +75,9 @@ class Main extends Component {
           />
           <Route path="/catalog/:itemId" component={ItemWithId} />
           <Route exact path="/contactus" component={Contact} />} />
+          <Route exact path="/aboutus" component={AboutPage} />} />
           <Redirect to="/home" />
         </Switch>
-        {/* <Catalog
-          items={this.state.items}
-          onClick={itemId => {
-            this.onItemSelect(itemId);
-          }}
-        />
-        <ItemDetail
-          item={
-            this.state.items.filter(
-              item => item.id === this.state.selectedItem
-            )[0]
-          }
-        /> */}
         <Footer />
       </div>
     );
