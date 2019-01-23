@@ -34,7 +34,7 @@ class Header extends Component {
             <NavbarToggler onClick={this.toggleNav} />
             <NavbarBrand className="mr-auto" href="/">
               <img
-                src="assets/images/safetylogo.png"
+                src="/assets/images/safetylogo.png"
                 alt="SSI"
                 width="40"
                 height="40"

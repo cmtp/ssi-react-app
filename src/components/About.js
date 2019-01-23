@@ -9,9 +9,33 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const About = (props) => {
+const RenderEmployee = props => {
+  const imgStyle = {
+    maxHeight: 100,
+    maxWidth: 100,
+  };
+
+  return (
+    <Media tag="li" className="col-12 mt-5">
+      <Media left middle>
+        <Media
+          object
+          src={props.employee.image}
+          style={imgStyle}
+          alt={props.employee.name}
+        />
+      </Media>
+      <Media body>
+        <Media heading>{props.employee.name}</Media>
+        {props.employee.jobPosition}
+      </Media>
+    </Media>
+  );
+};
+
+const About = props => {
   const employees = props.employees.map(employee => {
-    return <p key={employee.id}>Employee {employee.name}</p>;
+    return <RenderEmployee key={employee.id} employee={employee} />;
   });
 
   return (
