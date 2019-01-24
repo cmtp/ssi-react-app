@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Switch, Redirect, Route } from 'react-router-dom';
+import { Switch, Redirect, Route, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import ITEMS from '../shared/items';
 import COMMENTS from '../shared/comments';
 import EMPLOYEES from '../shared/employees';
@@ -11,15 +13,15 @@ import Home from './Home';
 import Contact from './Contact';
 import About from './About';
 
+const mapStateToProps = state => ({
+  items: state.items,
+  employees: state.employees,
+  comments: state.comments,
+});
+
 class Main extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {
-      items: ITEMS,
-      comments: COMMENTS,
-      employees: EMPLOYEES,
-    };
-    console.log('Main constructor es invocado');
   }
 
   componentDidMount() {
@@ -36,9 +38,9 @@ class Main extends Component {
     const HomePage = () => {
       return (
         <Home
-          item={this.state.items.filter(item => item.featured)[0]}
+          item={this.props.items.filter(item => item.featured)[0]}
           employee={
-            this.state.employees.filter(employee => employee.featured)[0]
+            this.props.employees.filter(employee => employee.featured)[0]
           }
         />
       );
@@ -48,11 +50,11 @@ class Main extends Component {
       return (
         <ItemDetail
           item={
-            this.state.items.filter(
+            this.props.items.filter(
               item => item.id === parseInt(match.params.itemId, 10)
             )[0]
           }
-          comments={this.state.comments.filter(
+          comments={this.props.comments.filter(
             comment => comment.itemId === parseInt(match.params.itemId, 10)
           )}
         />
@@ -60,7 +62,7 @@ class Main extends Component {
     };
 
     const AboutPage = () => {
-      return <About employees={this.state.employees} />;
+      return <About employees={this.props.employees} />;
     };
 
     return (
@@ -71,7 +73,7 @@ class Main extends Component {
           <Route
             exact
             path="/catalog"
-            component={() => <Catalog items={this.state.items} />}
+            component={() => <Catalog items={this.props.items} />}
           />
           <Route path="/catalog/:itemId" component={ItemWithId} />
           <Route exact path="/contactus" component={Contact} />} />
@@ -84,4 +86,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));

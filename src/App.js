@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import ITEMS from './shared/items';
 import Main from './components/Main';
+import { configureStore } from './redux/reducer';
 
-class App extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      items: ITEMS,
-    };
-  }
+const store = configureStore();
 
-  render() {
-    return (
-      <BrowserRouter>
-        <div>
-          <Main />
-        </div>
-      </BrowserRouter>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <BrowserRouter>
+      <div>
+        <Main />
+      </div>
+    </BrowserRouter>
+  </Provider>
+);
 
 export default App;
