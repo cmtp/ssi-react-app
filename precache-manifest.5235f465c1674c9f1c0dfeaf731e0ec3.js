@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "b06871f281fee6b241d60582ae9369b9",
-    "url": "/ssi-react-app/static/media/fontawesome-webfont.b06871f2.ttf"
+    "revision": "af7ae505a9eed503f8b8e6982036873e",
+    "url": "/ssi-react-app/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
     "revision": "8408680e46e079d03988",
@@ -28,12 +28,12 @@ self.__precacheManifest = [
     "url": "/ssi-react-app/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
-    "revision": "af7ae505a9eed503f8b8e6982036873e",
-    "url": "/ssi-react-app/static/media/fontawesome-webfont.af7ae505.woff2"
-  },
-  {
     "revision": "912ec66d7572ff821749319396470bde",
     "url": "/ssi-react-app/static/media/fontawesome-webfont.912ec66d.svg"
+  },
+  {
+    "revision": "b06871f281fee6b241d60582ae9369b9",
+    "url": "/ssi-react-app/static/media/fontawesome-webfont.b06871f2.ttf"
   },
   {
     "revision": "05c7f5a40460358bf211",
