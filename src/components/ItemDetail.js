@@ -10,6 +10,7 @@ import {
 } from 'reactstrap';
 
 import { Link } from 'react-router-dom';
+import CommentForm from './CommentForm';
 
 function RenderItem({ item }) {
   if (item != null) {
@@ -50,6 +51,7 @@ function RenderComments({ comments }) {
       <div>
         <h4>Comments</h4>
         <ul className="list-unstyled">{commentsItems}</ul>
+        <CommentForm />
       </div>
     );
   }
@@ -57,7 +59,6 @@ function RenderComments({ comments }) {
 }
 
 const ItemDetail = props => {
-  console.log('ItemDetail render es invocado');
   return (
     <div className="container">
       <div className="row">
@@ -77,7 +78,7 @@ const ItemDetail = props => {
           <RenderItem item={props.item} />
         </div>
         <div className="col-12 col-md-5 m-1">
-          <RenderComments item={props.comments} />
+          <RenderComments comments={props.comments} />
         </div>
       </div>
     </div>
