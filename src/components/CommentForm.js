@@ -32,8 +32,12 @@ class CommentForm extends Component {
   }
 
   handleSubmit = values => {
-    console.log('Current State is: ' + JSON.stringify(values));
-    alert('Current State is: ' + JSON.stringify(values));
+    this.props.addComment(
+      this.props.itemId,
+      values.rating,
+      values.author,
+      values.comment
+    );
   };
 
   render() {
@@ -87,7 +91,8 @@ class CommentForm extends Component {
                     model=".rating"
                     id="rating"
                     name="rating"
-                    className="form-control">
+                    className="form-control"
+                  >
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

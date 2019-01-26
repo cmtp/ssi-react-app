@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Redirect, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import addComment from '../redux/ActionCreators';
 
 import ITEMS from '../shared/items';
 import COMMENTS from '../shared/comments';
@@ -17,6 +18,11 @@ const mapStateToProps = state => ({
   items: state.items,
   employees: state.employees,
   comments: state.comments,
+});
+
+const mapDispatchToProps = dispatch => ({
+  addComment: (itemId, rating, author, comment) =>
+    dispatch(addComment(itemId, rating, author, comment)),
 });
 
 class Main extends Component {
@@ -57,6 +63,7 @@ class Main extends Component {
           comments={this.props.comments.filter(
             comment => comment.itemId === parseInt(match.params.itemId, 10)
           )}
+          addComment={this.props.addComment}
         />
       );
     };
@@ -86,4 +93,9 @@ class Main extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Main)
+);

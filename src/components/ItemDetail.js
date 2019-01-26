@@ -27,7 +27,7 @@ function RenderItem({ item }) {
   return <div />;
 }
 
-function RenderComments({ comments }) {
+function RenderComments({ comments, addComment, itemId }) {
   if (comments != null) {
     const commentsItems = comments.map(comment => {
       return (
@@ -51,7 +51,7 @@ function RenderComments({ comments }) {
       <div>
         <h4>Comments</h4>
         <ul className="list-unstyled">{commentsItems}</ul>
-        <CommentForm />
+        <CommentForm itemId={itemId} addComment={addComment} />
       </div>
     );
   }
@@ -78,7 +78,11 @@ const ItemDetail = props => {
           <RenderItem item={props.item} />
         </div>
         <div className="col-12 col-md-5 m-1">
-          <RenderComments comments={props.comments} />
+          <RenderComments
+            comments={props.comments}
+            addComment={props.addComment}
+            itemId={props.item.id}
+          />
         </div>
       </div>
     </div>
