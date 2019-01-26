@@ -25,7 +25,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "publish": "push-dir --dir=build --branch=gh-pages --cleanup",
-    "dev:server": "lite-server --baseDir=build"
+    "dev:server": "lite-server --baseDir=build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,6 +40,7 @@
   ],
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
+    "gh-pages": "^2.0.1",
     "lite-server": "^2.4.0",
     "push-dir": "^0.4.1"
   }
