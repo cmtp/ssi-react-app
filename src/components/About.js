@@ -8,6 +8,7 @@ import {
   Media,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { baseUrl } from '../shared/baseUrl';
 
 const RenderEmployee = props => {
   const imgStyle = {
@@ -20,7 +21,7 @@ const RenderEmployee = props => {
       <Media left middle>
         <Media
           object
-          src={props.employee.image}
+          src={baseUrl + props.employee.image}
           style={imgStyle}
           alt={props.employee.name}
         />

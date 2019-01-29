@@ -5,9 +5,6 @@ import { actions } from 'react-redux-form';
 
 import { addComment, fetchItems, fetchComments } from '../redux/ActionCreators';
 
-import ITEMS from '../shared/items';
-import COMMENTS from '../shared/comments';
-import EMPLOYEES from '../shared/employees';
 import Catalog from './Catalog';
 import ItemDetail from './ItemDetail';
 import Header from './Header';
