@@ -1,6 +1,7 @@
 import * as ActionTypes from './ActionTypes';
+import ITEMS from '../shared/items';
 
-const addComment = (itemId, rating, author, comment) => ({
+export const addComment = (itemId, rating, author, comment) => ({
   type: ActionTypes.ADD_COMMENT,
   payload: {
     itemId,
@@ -9,4 +10,26 @@ const addComment = (itemId, rating, author, comment) => ({
     comment,
   },
 });
-export default addComment;
+
+export const fetchItems = () => dispatch => {
+  dispatch(itemsLoading(true));
+
+  setTimeout(() => {
+    //pondra los items al store
+    dispatch(addItems(ITEMS));
+  }, 2000);
+};
+
+export const itemsLoading = () => ({
+  type: ActionTypes.ITEMS_LOADING,
+});
+
+export const itemsFailed = errmess => ({
+  type: ActionTypes.ITEMS_FAILED,
+  payload: errmess,
+});
+
+export const addItems = items => ({
+  type: ActionTypes.ADD_ITEMS,
+  payload: items,
+});

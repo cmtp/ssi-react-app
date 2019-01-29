@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Redirect, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import addComment from '../redux/ActionCreators';
+import { addComment, fetchItems } from '../redux/ActionCreators';
 
 import ITEMS from '../shared/items';
 import COMMENTS from '../shared/comments';
@@ -23,6 +23,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   addComment: (itemId, rating, author, comment) =>
     dispatch(addComment(itemId, rating, author, comment)),
+  fetchItems: () => {
+    dispatch(fetchItems());
+  },
 });
 
 class Main extends Component {
@@ -31,7 +34,7 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    console.log('Main componentDidMount es invocado');
+    this.props.fetchItems();
   }
 
   onItemSelect(itemId) {
@@ -44,7 +47,9 @@ class Main extends Component {
     const HomePage = () => {
       return (
         <Home
-          item={this.props.items.filter(item => item.featured)[0]}
+          item={this.props.items.items.filter(item => item.featured)[0]}
+          itemsLoading={this.props.items.isLoading}
+          itemsErrMess={this.props.items.errMess}
           employee={
             this.props.employees.filter(employee => employee.featured)[0]
           }
@@ -56,10 +61,12 @@ class Main extends Component {
       return (
         <ItemDetail
           item={
-            this.props.items.filter(
+            this.props.items.items.filter(
               item => item.id === parseInt(match.params.itemId, 10)
             )[0]
           }
+          isLoading={this.props.items.isLoading}
+          errMess={this.props.items.errMess}
           comments={this.props.comments.filter(
             comment => comment.itemId === parseInt(match.params.itemId, 10)
           )}
