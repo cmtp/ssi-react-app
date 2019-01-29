@@ -11,6 +11,9 @@ export const addComment = (itemId, rating, author, comment) => ({
   },
 });
 
+// Este es un thunk
+// El thunk permite llamar a diferentes actions al mismo tiempo
+// podemos agregar logica del negocio aca.
 export const fetchItems = () => dispatch => {
   dispatch(itemsLoading(true));
 
