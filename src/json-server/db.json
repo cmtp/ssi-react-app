@@ -1,0 +1,257 @@
+{
+  "items": [
+    {
+      "id": 0,
+      "name": "Helmet",
+      "image": "/images/helmet.jpg",
+      "category": "safety",
+      "label": "ultra safe",
+      "price": "4.99",
+      "featured": true,
+      "description": "Un casco de seguridad útil para proteger en ámbitos como la construcción, fabricas y otros"
+    },
+    {
+      "id": 1,
+      "name": "Audio protector",
+      "image": "/images/audio.jpg",
+      "category": "safety",
+      "label": "noise filter",
+      "price": "12.99",
+      "featured": false,
+      "description": "Protege de ruidos auditivos por encima de los decibeles considerados aceptables"
+    },
+    {
+      "id": 2,
+      "name": "Glasses",
+      "image": "/images/glasses.jpg",
+      "category": "safety",
+      "label": "New technology",
+      "price": "31.99",
+      "featured": false,
+      "description": "Permite filtrar rayos ultravioleta, material anti rayas, anti caidas"
+    },
+    {
+      "id": 3,
+      "name": "Gloves",
+      "image": "/images/gloves.jpg",
+      "category": "safety",
+      "label": "",
+      "price": "12.99",
+      "featured": false,
+      "description": "Hechos de algodón con goma antideslizante, especial para industria química."
+    }
+  ],
+  "comments": [
+    {
+      "id": 0,
+      "itemId": 0,
+      "rating": 5,
+      "comment": "Imagine all safety PPE in SSI!",
+      "author": "Mr T",
+      "date": "2012-10-16T17:57:28.556094Z"
+    },
+    {
+      "id": 1,
+      "itemId": 0,
+      "rating": 4,
+      "comment": "Gives me a lot of confort, I wish I could get my mother-in-law to have it!",
+      "author": "Tania Barrancos",
+      "date": "2014-09-05T17:57:28.556094Z"
+    },
+    {
+      "id": 2,
+      "itemId": 0,
+      "rating": 3,
+      "comment": "Use it, just use it!",
+      "author": "Michael Rodriguez",
+      "date": "2015-02-13T17:57:28.556094Z"
+    },
+    {
+      "id": 3,
+      "itemId": 0,
+      "rating": 4,
+      "comment": "Ultimate, Reaching for the stars!",
+      "author": "Diana Cardozo",
+      "date": "2013-12-02T17:57:28.556094Z"
+    },
+    {
+      "id": 4,
+      "itemId": 0,
+      "rating": 2,
+      "comment": "It's your birthday, we're gonna party!",
+      "author": "25 Cent",
+      "date": "2011-12-02T17:57:28.556094Z"
+    },
+    {
+      "id": 5,
+      "itemId": 1,
+      "rating": 5,
+      "comment": "Imagine all safety PPE in SSI!",
+      "author": "Mr T",
+      "date": "2012-10-16T17:57:28.556094Z"
+    },
+    {
+      "id": 6,
+      "itemId": 1,
+      "rating": 4,
+      "comment": "Gives me a lot of confort, I wish I could get my mother-in-law to have it!",
+      "author": "Tania Barrancos",
+      "date": "2014-09-05T17:57:28.556094Z"
+    },
+    {
+      "id": 7,
+      "itemId": 1,
+      "rating": 3,
+      "comment": "Use it, just use it!",
+      "author": "Michael Rodriguez",
+      "date": "2015-02-13T17:57:28.556094Z"
+    },
+    {
+      "id": 8,
+      "itemId": 1,
+      "rating": 4,
+      "comment": "Ultimate, Reaching for the stars!",
+      "author": "Diana Cardozo",
+      "date": "2013-12-02T17:57:28.556094Z"
+    },
+    {
+      "id": 9,
+      "itemId": 1,
+      "rating": 2,
+      "comment": "It's your birthday, we're gonna party!",
+      "author": "25 Cent",
+      "date": "2011-12-02T17:57:28.556094Z"
+    },
+    {
+      "id": 10,
+      "itemId": 2,
+      "rating": 5,
+      "comment": "Imagine all safety PPE in SSI!",
+      "author": "Mr T",
+      "date": "2012-10-16T17:57:28.556094Z"
+    },
+    {
+      "id": 11,
+      "itemId": 2,
+      "rating": 4,
+      "comment": "Gives me a lot of confort, I wish I could get my mother-in-law to have it!",
+      "author": "Tania Barrancos",
+      "date": "2014-09-05T17:57:28.556094Z"
+    },
+    {
+      "id": 12,
+      "itemId": 2,
+      "rating": 3,
+      "comment": "Use it, just use it!",
+      "author": "Michael Rodriguez",
+      "date": "2015-02-13T17:57:28.556094Z"
+    },
+    {
+      "id": 13,
+      "itemId": 2,
+      "rating": 4,
+      "comment": "Ultimate, Reaching for the stars!",
+      "author": "Diana Cardozo",
+      "date": "2013-12-02T17:57:28.556094Z"
+    },
+    {
+      "id": 14,
+      "itemId": 2,
+      "rating": 2,
+      "comment": "It's your birthday, we're gonna party!",
+      "author": "25 Cent",
+      "date": "2011-12-02T17:57:28.556094Z"
+    },
+    {
+      "id": 15,
+      "itemId": 3,
+      "rating": 5,
+      "comment": "Imagine all safety PPE in SSI!",
+      "author": "Mr T",
+      "date": "2012-10-16T17:57:28.556094Z"
+    },
+    {
+      "id": 16,
+      "itemId": 3,
+      "rating": 4,
+      "comment": "Gives me a lot of confort, I wish I could get my mother-in-law to have it!",
+      "author": "Tania Barrancos",
+      "date": "2014-09-05T17:57:28.556094Z"
+    },
+    {
+      "id": 17,
+      "itemId": 3,
+      "rating": 3,
+      "comment": "Use it, just use it!",
+      "author": "Michael Rodriguez",
+      "date": "2015-02-13T17:57:28.556094Z"
+    },
+    {
+      "id": 18,
+      "itemId": 3,
+      "rating": 4,
+      "comment": "Ultimate, Reaching for the stars!",
+      "author": "Diana Cardozo",
+      "date": "2013-12-02T17:57:28.556094Z"
+    },
+    {
+      "id": 19,
+      "itemId": 3,
+      "rating": 2,
+      "comment": "It's your birthday, we're gonna party!",
+      "author": "25 Cent",
+      "date": "2011-12-02T17:57:28.556094Z"
+    }
+  ],
+  "employees": [
+    {
+      "id": 0,
+      "name": "Henry Cavill",
+      "image": "/images/henry.jpg",
+      "jobPosition": "Chief Enterprise Officer",
+      "jobCode": "CEO",
+      "featured": true,
+      "jobDescription": "El CEO, esta encargado de dirigir la empresa para conseguir los objetivos alineados con las estrategias de la empresa. Su rol fundamental es marcar las estrategias a seguir cuidando que los indicadores relacionados se cumplan y de ser necesario proponer nuevas estrategias que permitan a la empresa adaptarse al mercado."
+    },
+    {
+      "id": 1,
+      "name": "Ben Affleck",
+      "image": "/images/ben.jpg",
+      "jobPosition": "Chief Technology Officer",
+      "jobCode": "CTO",
+      "featured": false,
+      "jobDescription": "El CTO, tiene la function de garantizar la calidad de los productos de software cuidando que los recursos utiliados sean adecuados en terminos de tiempo, costo y recurso, de manera que la satisfaccion del cliente este asegurada."
+    },
+    {
+      "id": 2,
+      "name": "Gal Gadot",
+      "image": "/images/gal.jpg",
+      "jobPosition": "Software Lead",
+      "jobCode": "CTO",
+      "featured": false,
+      "jobDescription": "Tiene la function de dirigir los projectos de software garantizando que se utilice adecuadamente la major tecnologia disponible, y tambien debe garantizar la calidad de todo el equipo del projecto"
+    },
+    {
+      "id": 3,
+      "name": "Amy Adams",
+      "image": "/images/amy.jpg",
+      "jobPosition": "Executive User Experience Chef",
+      "jobCode": "EC",
+      "featured": false,
+      "jobDescription": "Debe garantizar que la experiencia del usuario al estar frente al producto de software sea lo mas agradable possible, cuidando que la usabilidad del producto sea maximizada, debe diseñar los flujos proponiendo nuevos procesos que agilicen los actuales antes de la implementacion de las nuevas funcionalidades."
+    }
+  ],
+  "feedback": [
+    {
+      "firstname": "fdas",
+      "lastname": "afds",
+      "telnum": "134113",
+      "email": "dafdads@daffas.dfdafd",
+      "agree": true,
+      "contactType": "Email",
+      "message": "afadsfds",
+      "date": "2019-25-01T05:33:33.770Z",
+      "id": 1
+    }
+  ]
+}

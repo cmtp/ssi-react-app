@@ -9,12 +9,13 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
+import { baseUrl } from '../shared/baseUrl';
 
 function RenderCatalogItem({ item }) {
   return (
     <Card>
       <Link to={`/catalog/${item.id}`}>
-        <CardImg width="100%" src={item.image} alt={item.name} />
+        <CardImg width="100%" src={baseUrl + item.image} alt={item.name} />
         <CardImgOverlay>
           <CardTitle>{item.name}</CardTitle>
         </CardImgOverlay>

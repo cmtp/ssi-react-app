@@ -12,12 +12,13 @@ import {
 import { Link } from 'react-router-dom';
 import CommentForm from './CommentForm';
 import Loading from './Loading';
+import { baseUrl } from '../shared/baseUrl';
 
 function RenderItem({ item }) {
   if (item != null) {
     return (
       <Card>
-        <CardImg width="100%" src={item.image} alt={item.name} />
+        <CardImg width="100%" src={baseUrl + item.image} alt={item.name} />
         <CardBody>
           <CardTitle>{item.name}</CardTitle>
           <CardText>{item.description}</CardText>

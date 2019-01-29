@@ -1,6 +1,8 @@
 import * as ActionTypes from './ActionTypes';
 import ITEMS from '../shared/items';
+import fetch from 'cross-fetch';
 
+import { baseUrl } from '../shared/baseUrl';
 export const addComment = (itemId, rating, author, comment) => ({
   type: ActionTypes.ADD_COMMENT,
   payload: {
@@ -17,10 +19,9 @@ export const addComment = (itemId, rating, author, comment) => ({
 export const fetchItems = () => dispatch => {
   dispatch(itemsLoading(true));
 
-  setTimeout(() => {
-    //pondra los items al store
-    dispatch(addItems(ITEMS));
-  }, 2000);
+  return fetch(baseUrl + 'items')
+    .then(response => response.json())
+    .then(items => dispatch(addItems(items)));
 };
 
 export const itemsLoading = () => ({
@@ -35,4 +36,20 @@ export const itemsFailed = errmess => ({
 export const addItems = items => ({
   type: ActionTypes.ADD_ITEMS,
   payload: items,
+});
+
+export const fetchComments = () => dispatch => {
+  return fetch(baseUrl + 'comments')
+    .then(response => response.json())
+    .then(comments => dispatch(addComments(comments)));
+};
+
+export const commentsFailed = errmess => ({
+  type: ActionTypes.COMMENTS_FAILED,
+  payload: errmess,
+});
+
+export const addComments = comments => ({
+  type: ActionTypes.ADD_COMMENTS,
+  payload: comments,
 });

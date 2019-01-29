@@ -3,7 +3,7 @@ import { Switch, Redirect, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 
-import { addComment, fetchItems } from '../redux/ActionCreators';
+import { addComment, fetchItems, fetchComments } from '../redux/ActionCreators';
 
 import ITEMS from '../shared/items';
 import COMMENTS from '../shared/comments';
@@ -31,6 +31,7 @@ const mapDispatchToProps = dispatch => ({
   resetFeedbackForm: () => {
     dispatch(actions.reset('feedback'));
   },
+  fetchComments: () => dispatch(fetchComments()),
 });
 
 class Main extends Component {
@@ -40,6 +41,7 @@ class Main extends Component {
 
   componentDidMount() {
     this.props.fetchItems();
+    this.props.fetchComments();
   }
 
   onItemSelect(itemId) {
@@ -72,9 +74,10 @@ class Main extends Component {
           }
           isLoading={this.props.items.isLoading}
           errMess={this.props.items.errMess}
-          comments={this.props.comments.filter(
+          comments={this.props.comments.comments.filter(
             comment => comment.itemId === parseInt(match.params.itemId, 10)
           )}
+          commentsErrMess={this.props.comments.errMess}
           addComment={this.props.addComment}
         />
       );
