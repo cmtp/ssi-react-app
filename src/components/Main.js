@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Redirect, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { actions } from 'react-redux-form';
+
 import { addComment, fetchItems } from '../redux/ActionCreators';
 
 import ITEMS from '../shared/items';
@@ -25,6 +27,9 @@ const mapDispatchToProps = dispatch => ({
     dispatch(addComment(itemId, rating, author, comment)),
   fetchItems: () => {
     dispatch(fetchItems());
+  },
+  resetFeedbackForm: () => {
+    dispatch(actions.reset('feedback'));
   },
 });
 
@@ -90,7 +95,14 @@ class Main extends Component {
             component={() => <Catalog items={this.props.items} />}
           />
           <Route path="/catalog/:itemId" component={ItemWithId} />
-          <Route exact path="/contactus" component={Contact} />} />
+          <Route
+            exact
+            path="/contactus"
+            component={() => (
+              <Contact resetFeedbackForm={this.props.resetFeedbackForm} />
+            )}
+          />
+          } />
           <Route exact path="/aboutus" component={AboutPage} />} />
           <Redirect to="/home" />
         </Switch>

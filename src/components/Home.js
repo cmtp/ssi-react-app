@@ -11,7 +11,6 @@ import {
 import Loading from './Loading';
 
 const RenderCard = ({ item, isLoading, errMess }) => {
-  console.log(isLoading);
   if (isLoading) {
     return <Loading />;
   } else if (errMess) {
