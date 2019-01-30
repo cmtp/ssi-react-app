@@ -12,6 +12,7 @@ import Loading from './Loading';
 import { baseUrl } from '../shared/baseUrl';
 
 const RenderCard = ({ item, isLoading, errMess }) => {
+  console.log(item);
   if (isLoading) {
     return <Loading />;
   } else if (errMess) {

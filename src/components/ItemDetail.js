@@ -29,7 +29,7 @@ function RenderItem({ item }) {
   return <div />;
 }
 
-function RenderComments({ comments, addComment, itemId }) {
+function RenderComments({ comments, postComment, itemId }) {
   if (comments != null) {
     const commentsItems = comments.map(comment => {
       return (
@@ -53,7 +53,7 @@ function RenderComments({ comments, addComment, itemId }) {
       <div>
         <h4>Comments</h4>
         <ul className="list-unstyled">{commentsItems}</ul>
-        <CommentForm itemId={itemId} addComment={addComment} />
+        <CommentForm itemId={itemId} postComment={postComment} />
       </div>
     );
   }
@@ -99,7 +99,7 @@ const ItemDetail = props => {
           <div className="col-12 col-md-5 m-1">
             <RenderComments
               comments={props.comments}
-              addComment={props.addComment}
+              postComment={props.postComment}
               itemId={props.item.id}
             />
           </div>

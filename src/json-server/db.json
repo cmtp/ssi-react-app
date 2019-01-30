@@ -3,7 +3,7 @@
     {
       "id": 0,
       "name": "Helmet",
-      "image": "/images/helmet.jpg",
+      "image": "images/helmet.jpg",
       "category": "safety",
       "label": "ultra safe",
       "price": "4.99",
@@ -13,7 +13,7 @@
     {
       "id": 1,
       "name": "Audio protector",
-      "image": "/images/audio.jpg",
+      "image": "images/audio.jpg",
       "category": "safety",
       "label": "noise filter",
       "price": "12.99",
@@ -23,7 +23,7 @@
     {
       "id": 2,
       "name": "Glasses",
-      "image": "/images/glasses.jpg",
+      "image": "images/glasses.jpg",
       "category": "safety",
       "label": "New technology",
       "price": "31.99",
@@ -33,7 +33,7 @@
     {
       "id": 3,
       "name": "Gloves",
-      "image": "/images/gloves.jpg",
+      "image": "images/gloves.jpg",
       "category": "safety",
       "label": "",
       "price": "12.99",
@@ -201,13 +201,20 @@
       "comment": "It's your birthday, we're gonna party!",
       "author": "25 Cent",
       "date": "2011-12-02T17:57:28.556094Z"
+    },
+    {
+      "itemId": 0,
+      "author": "asd",
+      "comment": "asd",
+      "date": "2019-01-30T00:12:44.480Z",
+      "id": 20
     }
   ],
   "employees": [
     {
       "id": 0,
       "name": "Henry Cavill",
-      "image": "/images/henry.jpg",
+      "image": "images/henry.jpg",
       "jobPosition": "Chief Enterprise Officer",
       "jobCode": "CEO",
       "featured": true,
@@ -216,7 +223,7 @@
     {
       "id": 1,
       "name": "Ben Affleck",
-      "image": "/images/ben.jpg",
+      "image": "images/ben.jpg",
       "jobPosition": "Chief Technology Officer",
       "jobCode": "CTO",
       "featured": false,
@@ -225,7 +232,7 @@
     {
       "id": 2,
       "name": "Gal Gadot",
-      "image": "/images/gal.jpg",
+      "image": "images/gal.jpg",
       "jobPosition": "Software Lead",
       "jobCode": "CTO",
       "featured": false,
@@ -234,7 +241,7 @@
     {
       "id": 3,
       "name": "Amy Adams",
-      "image": "/images/amy.jpg",
+      "image": "images/amy.jpg",
       "jobPosition": "Executive User Experience Chef",
       "jobCode": "EC",
       "featured": false,

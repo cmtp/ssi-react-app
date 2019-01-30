@@ -3,7 +3,12 @@ import { Switch, Redirect, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 
-import { addComment, fetchItems, fetchComments } from '../redux/ActionCreators';
+import {
+  postComment,
+  fetchItems,
+  fetchComments,
+  fetchEmployees,
+} from '../redux/ActionCreators';
 
 import Catalog from './Catalog';
 import ItemDetail from './ItemDetail';
@@ -20,8 +25,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addComment: (itemId, rating, author, comment) =>
-    dispatch(addComment(itemId, rating, author, comment)),
+  postComment: (itemId, rating, author, comment) =>
+    dispatch(postComment(itemId, rating, author, comment)),
   fetchItems: () => {
     dispatch(fetchItems());
   },
@@ -29,6 +34,9 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.reset('feedback'));
   },
   fetchComments: () => dispatch(fetchComments()),
+  fetchEmployees: () => {
+    dispatch(fetchEmployees());
+  },
 });
 
 class Main extends Component {
@@ -38,6 +46,7 @@ class Main extends Component {
 
   componentDidMount() {
     this.props.fetchItems();
+    this.props.fetchEmployees();
     this.props.fetchComments();
   }
 
@@ -49,13 +58,16 @@ class Main extends Component {
 
   render() {
     const HomePage = () => {
+      console.log(this.props.employees);
       return (
         <Home
           item={this.props.items.items.filter(item => item.featured)[0]}
           itemsLoading={this.props.items.isLoading}
           itemsErrMess={this.props.items.errMess}
           employee={
-            this.props.employees.filter(employee => employee.featured)[0]
+            this.props.employees.employees.filter(
+              employee => employee.featured
+            )[0]
           }
         />
       );
@@ -75,13 +87,13 @@ class Main extends Component {
             comment => comment.itemId === parseInt(match.params.itemId, 10)
           )}
           commentsErrMess={this.props.comments.errMess}
-          addComment={this.props.addComment}
+          postComment={this.props.postComment}
         />
       );
     };
 
     const AboutPage = () => {
-      return <About employees={this.props.employees} />;
+      return <About employees={this.props.employees.employees} />;
     };
 
     return (
