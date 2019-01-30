@@ -66,3 +66,38 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Docker Instructions
+
+Construiremos la imagen docker con el comando:
+
+```
+docker build -t ssi-react-app
+```
+
+Usted puede hacer push de su imagen a docker hub opcionalmente
+
+```
+docker push tucuentaDocker/ ssi-react-app:v0.0.0-rc.1
+```
+
+Usted puede hacer pull de su imagen a docker hub opcionalmente
+
+```
+docker pull tucuentaDocker/ssi-react-app:v0.0.0-rc.1
+```
+
+Ejecutar la imagen con 
+
+```
+docker run -p 80:80 ssi-react-app
+```
+
+Verificar la aplicación corriendo en localhost
+
+Otros comandos docker
+
+```
+docker kill $(docker ps -q)		elimina procesos de contenedores
+docker rm $(docker ps -a -q)		elimina contenedores
+```
